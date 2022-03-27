@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Main from "./components/main";
+import data from "./data.json";
+import filmData from "./data2.json";
+import Character from "./components/character";
 
 function App() {
+  const [click, setClick] = useState({
+    name: "test-name",
+    hairColor: "test-haircolor",
+    eyeColor: "test-eyecolor",
+    skinColor: "test-skinscolor",
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main data={data} filmData={filmData} setClick={setClick} />
+            }
+          />
+          <Route
+            path="/character"
+            element={<Character data={data} click={click} />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }

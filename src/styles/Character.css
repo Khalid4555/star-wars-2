@@ -1,0 +1,31 @@
+.con {
+  display: flex;
+  background-color: navy;
+  border-radius: 2%;
+  font-size: large;
+  height: 500px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  background-image: url("../styles/bryan-garces-IXUM4cJynP0-unsplash.jpg");
+  background-size: cover;
+  height: 500px;
+}
+
+.character-container {
+  border: 10px solid black;
+}
+
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.con img {
+  height: 200px;
+  width: 170px;
+  border-radius: 50%;
+}
