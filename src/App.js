@@ -26,7 +26,7 @@ function App() {
           />
           <Route
             path="/character"
-            element={<Character data={data} click={click} />}
+            element={<Character filmData={filmData} click={click} />}
           />
         </Routes>
       </Router>

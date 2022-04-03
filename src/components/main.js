@@ -28,17 +28,19 @@ const Main = (props) => {
     }
   }, []);
 
-  const handleClick = () => {
-    people.map((item) => {
-      return setClick({
-        name: item.name,
-        skinColor: item.skinColor,
-        hairColor: item.hairColor,
-        eyeColor: item.eyeColor,
-      });
+  const handleClick = (personId) => {
+    const person = people.find((item) => item.id === personId);
+    console.log("person", person.id);
+    setClick({
+      id: person.id,
+      name: person.name,
+      skinColor: person.skinColor,
+      hairColor: person.hairColor,
+      eyeColor: person.eyeColor,
     });
   };
 
+  console.log("films", films);
   return (
     <div className="container">
       <div className="container1">
@@ -50,10 +52,12 @@ const Main = (props) => {
         </a>
       </div>
       <div className="container2">
-        <header className="header">{date}</header>
+        <header className="heading">
+          <p>{date}</p>
+          <h3 className="header">StarWars Characters</h3>
+          <p className="heading">{quote}</p>
+        </header>
         <section className="section">
-          <h1 className="heading">StarWars Characters</h1>
-          <h4 className="heading">{quote}</h4>
           <table className="table">
             <tr>
               <th>Name</th>
@@ -66,11 +70,11 @@ const Main = (props) => {
             {people.map((person) => {
               return (
                 <tr key={person.id}>
-                  <td>
+                  <td className="personLinks">
                     <Link
-                      onClick={handleClick}
+                      onClick={() => handleClick(person.id)}
                       to="/character"
-                      className="personLinks"
+                      className="personLinks2"
                     >
                       {person.name}
                     </Link>

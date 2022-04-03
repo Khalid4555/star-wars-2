@@ -1,8 +1,8 @@
 .container1 {
-  border: 2px solid;
+  border-right: 2px solid;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 100px;
   height: 100%;
   align-items: center;
   background-color: navajowhite;
@@ -23,7 +23,7 @@
   flex-direction: row;
 }
 
-.header {
+.heading {
   height: 100px;
   border: 2px solid black;
   width: 100vw;
@@ -31,11 +31,13 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
+  color: white;
+  background-image: url("./banner-g20021b00d_1280.jpg");
 }
 
 .section {
   height: 100vh;
-  border: 2px solid black;
+  border-right: 2px solid black;
   width: 100%;
 }
 
@@ -46,12 +48,38 @@
 
 .personLinks {
   text-decoration: underline;
+  background-color: #899999;
+  border: solid black 4px;
+}
+.personLinks:hover {
+  background-color: aqua;
 }
 
 .table td {
-  border: 1px black solid;
+  /* border-right: 4px black solid; */
+  border-bottom: solid black 1px;
+  padding: 10px;
+  box-shadow: 3px 3px 3px #888888;
+}
+
+tr th {
+  border: solid black 4px;
+  padding: 10px;
+  background-color: #899999;
 }
 
 .heading {
   text-align: center;
+}
+
+Link:hover {
+  background-color: aqua;
+}
+
+.heading {
+  font-size: 13px;
+}
+
+.header {
+  font-size: 25px;
 }
